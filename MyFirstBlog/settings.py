@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 import os
 import django_on_heroku
+from storages.backends.s3boto3 import S3Boto3Storage
 import dj_database_url
 from decouple import config
 
