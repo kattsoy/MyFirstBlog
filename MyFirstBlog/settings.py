@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'blog',
     'users',
     'crispy_forms',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -121,6 +122,13 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
+
+AWS_ACCESS_KEY_ID = 'AKIASZXXNEBVVMACCHV6'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'katsoy-first-blog'
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_LCL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 STATIC_URL = '/static/'
 STATIC_DIRS = [os.path.join(BASE_DIR, 'static'), ]
