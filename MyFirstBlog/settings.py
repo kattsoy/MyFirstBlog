@@ -126,6 +126,7 @@ USE_TZ = True
 AWS_ACCESS_KEY_ID = 'AKIASZXXNEBVVMACCHV6'
 AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'katsoy-first-blog'
+AWS_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_LCL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
@@ -135,7 +136,7 @@ STATIC_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressManifestStaticFilesStorage'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+MEDIA_URL = f'https://{AWS_DOMAIN}/media/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
